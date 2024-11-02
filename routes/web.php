@@ -6,4 +6,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', 'HelloController@hello');
+Route::get('/hello/{name}', 'HelloController@hello');

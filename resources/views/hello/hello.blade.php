@@ -1,5 +1,5 @@
 <html>
     <body>
-        <div>Hello</div>
+        <div>Hello: {{ $requestName }}</div>
     </body>
 </html>
