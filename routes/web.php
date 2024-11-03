@@ -11,3 +11,7 @@ Route::get('/hello/{name}', 'HelloController@hello');
 Route::get('/goodbye/{name}', function (string $name) {
     return "Goodbye: " . $name;
 });
+
+Route::get('/example', function () {
+    return 'GET method';
+});
