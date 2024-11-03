@@ -7,3 +7,7 @@ Route::get('/', function () {
 });
 
 Route::get('/hello/{name}', 'HelloController@hello');
+
+Route::get('/goodbye/{name}', function (string $name) {
+    return "Goodbye: " . $name;
+});
