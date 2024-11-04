@@ -16,4 +16,10 @@ Route::get('/example', function () {
     return 'GET method';
 });
 
-Route::get('/example-arrow', fn() => 'arrow Function GET');
+$uri = '/example-arrow';
+Route::get($uri, fn() => 'arrow function GET');
+Route::post($uri, fn() => 'arrow function POST');
+Route::put($uri, fn() => 'arrow function PUT');
+Route::patch($uri, fn() => 'arrow function PATCH');
+Route::delete($uri, fn() => 'arrow function DELETE');
+Route::options($uri, fn() => 'arrow function OPTIONS');
