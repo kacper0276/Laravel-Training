@@ -15,3 +15,5 @@ Route::get('/goodbye/{name}', function (string $name) {
 Route::get('/example', function () {
     return 'GET method';
 });
+
+Route::get('/example-arrow', fn() => 'arrow Function GET');
