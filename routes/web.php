@@ -42,3 +42,7 @@ Route::get('posts/{postId}/{title}', function (int $postId, string $title) {
 Route::get('users/{nick?}', function (string $nick = null) { // \? - parameter is optional, define default value
     dd($nick);
 });
+
+Route::get('users-default-value/{nick?}', function (string $nick = 'Robert') {
+    dd($nick);
+});
