@@ -33,3 +33,8 @@ Route::any('/all', fn() => 'All methods');
 // Route view - routing widoków
 Route::view('/view/route', 'route.view');
 Route::view('/view/route/var1', 'route.viewParam', ['param1' => 'var1 - example data', 'name' => 'Tom']);
+
+Route::get('posts/{postId}/{title}', function (int $postId, string $title) {
+    dd($postId);
+    dd($title);
+});
