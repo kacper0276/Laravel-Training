@@ -28,4 +28,4 @@ Route::match(['get', 'post'], '/match', function() {
     return 'Same logic for http get and post';
 });
 
-Route::all('/all', fn() => 'All methods');
+Route::any('/all', fn() => 'All methods');
