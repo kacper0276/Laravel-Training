@@ -25,5 +25,7 @@ Route::delete($uri, fn() => 'arrow function DELETE');
 Route::options($uri, fn() => 'arrow function OPTIONS');
 
 Route::match(['get', 'post'], '/match', function() {
-    return 'Ta sama logika dla metody get i post';
+    return 'Same logic for http get and post';
 });
+
+Route::all('/all', fn() => 'All methods');
