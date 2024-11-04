@@ -46,3 +46,7 @@ Route::get('users/{nick?}', function (string $nick = null) { // \? - parameter i
 Route::get('users-default-value/{nick?}', function (string $nick = 'Robert') {
     dd($nick);
 });
+
+Route::get('users-parameter-regex/{nick}', function (string $nick) {
+    dd($nick);
+})->where(['nick' => '[a-z0-9]+']);
