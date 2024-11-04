@@ -38,3 +38,7 @@ Route::get('posts/{postId}/{title}', function (int $postId, string $title) {
     dd($postId);
     dd($title);
 });
+
+Route::get('users/{nick?}', function (string $nick = null) { // \? - parameter is optional, define default value
+    dd($nick);
+});
