@@ -24,8 +24,12 @@ Route::patch($uri, fn() => 'arrow function PATCH');
 Route::delete($uri, fn() => 'arrow function DELETE');
 Route::options($uri, fn() => 'arrow function OPTIONS');
 
-Route::match(['get', 'post'], '/match', function() {
+Route::match(['get', 'post'], '/match', function () {
     return 'Same logic for http get and post';
 });
 
 Route::any('/all', fn() => 'All methods');
+
+// Route view - routing widoków
+Route::view('/view/route', 'route.view');
+Route::view('/view/route/var1', 'route.viewParam', ['param1' => 'var1 - example data', 'name' => 'Tom']);
