@@ -50,3 +50,19 @@ Route::get('users-default-value/{nick?}', function (string $nick = 'Robert') {
 Route::get('users-parameter-regex/{nick}', function (string $nick) {
     dd($nick);
 })->where(['nick' => '[a-z0-9]+']);
+
+Route::get('items', function () {
+    return 'Items';
+})->name('shop.items');
+
+Route::get('items/{id}', function (int $id) {
+    return 'Items' . $id;
+})->name('shop.item.single');
+
+Route::get('example', function () {
+    // $url = route('shop.items');
+
+    $url = route('shop.item.single', ['id' => 4444]); // Add into place id param value 4444
+    // If third param in route is true we get full url (if false only uri)
+    dump($url);
+});
