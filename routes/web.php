@@ -66,3 +66,7 @@ Route::get('example', function () {
     // If third param in route is true we get full url (if false only uri)
     dump($url);
 });
+
+//! Controllers section
+Route::get('controller/users', 'UserController@list')
+    ->name('controller.get.users');
