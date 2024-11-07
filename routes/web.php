@@ -71,4 +71,5 @@ Route::get('example', function () {
 Route::get('controller/users', 'UserController@list')
     ->name('controller.get.users');
 
-Route::get('controller/users/{id}', 'User\ProfileController@show');
+Route::get('controller/users/{id}', 'User\ProfileController@show')
+    ->name('get.user.profile');
