@@ -75,4 +75,6 @@ Route::get('controller/users/{id}', 'User\ProfileController@show')
     ->name('get.user.profile');
 
 // SINGLE ACTION CONTROLLER
-Route::get('controller/users/{id}/address', 'User\ShowAddress');
+Route::get('controller/users/{id}/address', 'User\ShowAddress')
+    ->where(['id' => '[0-9]+'])
+    ->name('get.users.address');
