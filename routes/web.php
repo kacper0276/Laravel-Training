@@ -73,3 +73,6 @@ Route::get('controller/users', 'UserController@list')
 
 Route::get('controller/users/{id}', 'User\ProfileController@show')
     ->name('get.user.profile');
+
+// SINGLE ACTION CONTROLLER
+Route::get('controller/users/{id}/address', 'User\ShowAddress');
