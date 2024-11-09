@@ -1,1 +1,1 @@
-Repository created for training Laravel
+Repository created for training Laravel (project)
