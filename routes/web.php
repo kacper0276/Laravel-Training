@@ -78,3 +78,5 @@ Route::get('controller/users/{id}', 'User\ProfileController@show')
 Route::get('controller/users/{id}/address', 'User\ShowAddress')
     ->where(['id' => '[0-9]+'])
     ->name('get.users.address');
+
+Route::resource('games', 'GameController');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class GameController extends Controller
 {
@@ -11,7 +12,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+        dump('index');
     }
 
     /**
