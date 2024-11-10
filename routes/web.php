@@ -1,12 +1,17 @@
 <?php
 
+use App\Http\Controllers\Api\GameController;
+use App\Http\Controllers\HelloController;
+use App\Http\Controllers\User\ProfileController;
+use App\Http\Controllers\User\ShowAddress;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello/{name}', 'HelloController@hello');
+Route::get('/hello/{name}', [HelloController::class, 'hello']);
 
 Route::get('/goodbye/{name}', function (string $name) {
     return "Goodbye: " . $name;
@@ -68,20 +73,20 @@ Route::get('example', function () {
 });
 
 //! Controllers section
-Route::get('controller/users', 'UserController@list')
+Route::get('controller/users', [UserController::class, 'list'])
     ->name('controller.get.users');
 
-Route::get('controller/users/{id}', 'User\ProfileController@show')
+Route::get('controller/users/{id}', [ProfileController::class, 'show'])
     ->name('get.user.profile');
 
 // SINGLE ACTION CONTROLLER
-Route::get('controller/users/{id}/address', 'User\ShowAddress')
+Route::get('controller/users/{id}/address', ShowAddress::class)
     ->where(['id' => '[0-9]+'])
     ->name('get.users.address');
 
 // Route::resource('games', 'GameController');
-Route::resource('games', 'GameController')
+Route::resource('games', GameController::class)
     ->only(['index', 'show']);
 
-Route::resource('games/another', 'GameController')
+Route::resource('games/another', GameController::class)
     ->only(['index', 'show', 'create']);
