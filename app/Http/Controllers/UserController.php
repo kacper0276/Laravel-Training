@@ -23,6 +23,10 @@ class UserController extends Controller
         // Http method
         $httpMethod = $request->method();
 
+        if ($request->isMethod('post')) {
+            dump('Post method');
+        }
+
         dd($request);
         dd($id);
     }
