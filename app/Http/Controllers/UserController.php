@@ -20,7 +20,8 @@ class UserController extends Controller
         $url = $request->url();
         $fullUrl = $request->fullUrl(); // Include also query params
 
-
+        // Http method
+        $httpMethod = $request->method();
 
         dd($request);
         dd($id);
