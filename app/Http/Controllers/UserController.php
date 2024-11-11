@@ -27,6 +27,9 @@ class UserController extends Controller
             dump('Post method');
         }
 
+        // Get query params and data from body
+        $all = $request->all();
+
         dd($request);
         dd($id);
     }
