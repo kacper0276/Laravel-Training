@@ -90,3 +90,7 @@ Route::resource('games', GameController::class)
 
 Route::resource('games/another', GameController::class)
     ->only(['index', 'show', 'create']);
+
+//! Request (object) testing
+Route::get('controller/users/test/{id}', [UserController::class, 'testShow'])
+    ->name('controller.get.users.test');

@@ -12,4 +12,17 @@ class UserController extends Controller
     {
         return view('user.list');
     }
+
+    public function testShow(Request $request, int $id)
+    {
+        // Url adres
+        $uri = $request->path();
+        $url = $request->url();
+        $fullUrl = $request->fullUrl(); // Include also query params
+
+
+
+        dd($request);
+        dd($id);
+    }
 }
