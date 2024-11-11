@@ -94,3 +94,6 @@ Route::resource('games/another', GameController::class)
 //! Request (object) testing
 Route::get('controller/users/test/{id}', [UserController::class, 'testShow'])
     ->name('controller.get.users.test');
+
+Route::post('controller/users/test/{id}', [UserController::class, 'testStore'])
+    ->name('controller.post.users.test');

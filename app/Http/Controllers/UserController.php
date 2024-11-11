@@ -29,8 +29,19 @@ class UserController extends Controller
 
         // Get query params and data from body
         $all = $request->all();
+        dd($all);
 
         dd($request);
         dd($id);
+    }
+
+    public function testStore(Request $request, int $id)
+    {
+        if (!$request->isMethod('post')) {
+            return 'Not allowed method';
+        }
+
+        $all = $request->all();
+        dd($all);
     }
 }
