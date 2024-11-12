@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\GameController;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\ShowAddress;
 use App\Http\Controllers\UserController;
@@ -97,3 +98,6 @@ Route::get('controller/users/test/{id}', [UserController::class, 'testShow'])
 
 Route::post('controller/users/test/{id}', [UserController::class, 'testStore'])
     ->name('controller.post.users.test');
+
+// PDF
+Route::get('report/daily-footfall', [ReportController::class, 'generateDailyFootfallReport']);
