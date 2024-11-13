@@ -52,7 +52,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <th>Total</th>
+                <th>Total:</th>
                 <th>{{ $totals['2024'] }}</th>
                 <th>{{ $totals['2024W1'] }}</th>
                 <th>{{ $totals['2023'] }}</th>
