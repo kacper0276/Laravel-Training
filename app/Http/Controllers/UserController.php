@@ -44,6 +44,8 @@ class UserController extends Controller
         $expired = $request->boolean('expired'); // Get query param ?expired=true as boolean not string
         dd($expired);
 
+        $hasName = $request->has('name'); // Return True if name was in query params
+
         dd($request);
         dd($id);
     }
