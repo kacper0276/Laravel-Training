@@ -39,6 +39,11 @@ class UserController extends Controller
 
         $allQuery = $request->query(); // Get all query params
 
+        $name = $request->query('name', 'default'); // Get ?name=Tom
+
+        $expired = $request->boolean('expired'); // Get query param ?expired=true as boolean not string
+        dd($expired);
+
         dd($request);
         dd($id);
     }
