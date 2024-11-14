@@ -48,6 +48,8 @@ class UserController extends Controller
         $hasParams = $request->has(['name', 'nick']); // True only when all params was pass
         $hasAnyParams = $request->hasAny(['name', 'nick']); // True if min one of these params was pass
 
+        $cookies = $request->cookie();
+
         dd($request);
         dd($id);
     }
