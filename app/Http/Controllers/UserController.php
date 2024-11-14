@@ -31,6 +31,8 @@ class UserController extends Controller
         $all = $request->all();
         dd($all);
 
+        $name = $request->input('name'); // Get queryparam ?name=tom
+
         dd($request);
         dd($id);
     }
