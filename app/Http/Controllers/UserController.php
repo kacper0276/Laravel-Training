@@ -45,6 +45,8 @@ class UserController extends Controller
         dd($expired);
 
         $hasName = $request->has('name'); // Return True if name was in query params
+        $hasParams = $request->has(['name', 'nick']); // True only when all params was pass
+        $hasAnyParams = $request->hasAny(['name', 'nick']); // True if min one of these params was pass
 
         dd($request);
         dd($id);
