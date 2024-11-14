@@ -31,7 +31,9 @@ class UserController extends Controller
         $all = $request->all();
         dd($all);
 
-        $name = $request->input('name'); // Get queryparam ?name=tom
+        $name = $request->input('name', 'default value'); // Get queryparam ?name=tom
+
+        // pass array in query params; ?games[]=quake&games[]=turok
 
         dd($request);
         dd($id);
