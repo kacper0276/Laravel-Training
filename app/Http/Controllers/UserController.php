@@ -75,10 +75,16 @@ class UserController extends Controller
         // return 'This is normal text convert by framework on http Response';
 
         // Response object
-        return response(
-            "<h3> This is response object </h3>", // Content
-            200, // http status
-            ['Content-Type' => 'text-plain'] // array with headers
-        );
+        // return response(
+        //     "<h3> This is response object </h3>", // Content
+        //     200, // http status
+        //     ['Content-Type' => 'text-plain'] // array with headers
+        // );
+
+        // Chain
+        return response('<h3>This is response object </h3>')
+            ->setStatusCode(200)
+            ->header('Content-Type', 'text/html')
+            ->header('Own-Header', 'Laravel');
     }
 }
