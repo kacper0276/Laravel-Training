@@ -82,9 +82,14 @@ class UserController extends Controller
         // );
 
         // Chain
-        return response('<h3>This is response object </h3>')
-            ->setStatusCode(200)
+        // return response('<h3>This is response object </h3>')
+        //     ->setStatusCode(200)
+        //     ->header('Content-Type', 'text/html')
+        //     ->header('Own-Header', 'Laravel');
+
+        // With cookie
+        return response("<h3> This is response object </h3>", 200)
             ->header('Content-Type', 'text/html')
-            ->header('Own-Header', 'Laravel');
+            ->cookie('my_cookie', 'brownie', 10); // Time in minutes
     }
 }
