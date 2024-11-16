@@ -112,6 +112,9 @@ class UserController extends Controller
         //     ->header('Content-Type', 'text/html'); // Without this option laravel will not parse (display for example <ul> tag as <ul> not list)
 
         // Return View Response
-        return view('user.list', ['id' => 10]);
+        // return view('user.list', ['id' => 10]);
+
+        // Set as default: Content-Type: application/json
+        return response()->json(['id' => 10]);
     }
 }
