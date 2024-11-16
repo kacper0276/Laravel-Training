@@ -65,4 +65,20 @@ class UserController extends Controller
         $all = $request->all();
         dd($all);
     }
+
+    // RESPONSE
+    public function responseTest()
+    {
+        dd('show');
+
+        // Text
+        // return 'This is normal text convert by framework on http Response';
+
+        // Response object
+        return response(
+            "<h3> This is response object </h3>", // Content
+            200, // http status
+            ['Content-Type' => 'text-plain'] // array with headers
+        );
+    }
 }
