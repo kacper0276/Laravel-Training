@@ -93,6 +93,10 @@ class UserController extends Controller
         //     ->cookie('my_cookie', 'brownie', 10); // Time in minutes
 
         // Redirect
-        return redirect('users');
+        // return redirect('users');
+
+        // Redirect by route name
+        return redirect()->route('controller.get.users');
+        return redirect()->route('get.users.address', ['id' => 10]);
     }
 }
