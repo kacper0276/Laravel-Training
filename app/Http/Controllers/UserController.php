@@ -96,7 +96,11 @@ class UserController extends Controller
         // return redirect('users');
 
         // Redirect by route name
-        return redirect()->route('controller.get.users');
-        return redirect()->route('get.users.address', ['id' => 10]);
+        // return redirect()->route('controller.get.users');
+        // return redirect()->route('get.users.address', ['id' => 10]);
+
+        // Redirect to controller
+        return redirect()->action([HelloController::class, 'hello']);
+        return redirect()->action([HelloController::class, 'hello'], ['id' => 1]);
     }
 }
