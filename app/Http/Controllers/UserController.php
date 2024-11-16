@@ -100,7 +100,10 @@ class UserController extends Controller
         // return redirect()->route('get.users.address', ['id' => 10]);
 
         // Redirect to controller
-        return redirect()->action([HelloController::class, 'hello']);
-        return redirect()->action([HelloController::class, 'hello'], ['id' => 1]);
+        // return redirect()->action([HelloController::class, 'hello']);
+        // return redirect()->action([HelloController::class, 'hello'], ['id' => 1]);
+
+        // Redirect to other site
+        return redirect()->away('https://google.com');
     }
 }
