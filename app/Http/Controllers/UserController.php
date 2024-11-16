@@ -88,8 +88,11 @@ class UserController extends Controller
         //     ->header('Own-Header', 'Laravel');
 
         // With cookie
-        return response("<h3> This is response object </h3>", 200)
-            ->header('Content-Type', 'text/html')
-            ->cookie('my_cookie', 'brownie', 10); // Time in minutes
+        // return response("<h3> This is response object </h3>", 200)
+        //     ->header('Content-Type', 'text/html')
+        //     ->cookie('my_cookie', 'brownie', 10); // Time in minutes
+
+        // Redirect
+        return redirect('users');
     }
 }
