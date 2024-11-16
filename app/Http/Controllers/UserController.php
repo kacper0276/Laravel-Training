@@ -107,8 +107,11 @@ class UserController extends Controller
         // return redirect()->away('https://google.com');
 
         // Return View Response (with status, header, etc)
-        return response()
-            ->view('user.list', ['id' => 100], 200)
-            ->header('Content-Type', 'text/html');
+        // return response()
+        //     ->view('user.list', ['id' => 100], 200)
+        //     ->header('Content-Type', 'text/html'); // Without this option laravel will not parse (display for example <ul> tag as <ul> not list)
+
+        // Return View Response
+        return view('user.list', ['id' => 10]);
     }
 }
