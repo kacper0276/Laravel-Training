@@ -104,6 +104,11 @@ class UserController extends Controller
         // return redirect()->action([HelloController::class, 'hello'], ['id' => 1]);
 
         // Redirect to other site
-        return redirect()->away('https://google.com');
+        // return redirect()->away('https://google.com');
+
+        // Return View Response (with status, header, etc)
+        return response()
+            ->view('user.list', ['id' => 100], 200)
+            ->header('Content-Type', 'text/html');
     }
 }
