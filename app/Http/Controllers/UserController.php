@@ -13,6 +13,7 @@ class UserController extends Controller
         return view('user.list');
     }
 
+    // REQUEST
     public function testShow(Request $request, int $id)
     {
         // Url adres
@@ -54,6 +55,7 @@ class UserController extends Controller
         dd($id);
     }
 
+    // REQUEST
     public function testStore(Request $request, int $id)
     {
         if (!$request->isMethod('post')) {
