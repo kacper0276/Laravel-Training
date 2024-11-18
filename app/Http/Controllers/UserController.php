@@ -15,7 +15,10 @@ class UserController extends Controller
 
     public function testShow1(Request $request, int $id)
     {
-        return view('user.show', ['id' => $id, 'example' => 'example']);
+        return view('user.show', [
+            'id' => $id,
+            'example' => 'example'
+        ]);
     }
 
     // REQUEST

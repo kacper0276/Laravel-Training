@@ -1,4 +1,4 @@
-<h1>bar</h1>
+<h1>Application {{ $applicationName }}</h1>
 <div>
     Example: {{ $example }}
 </div>
