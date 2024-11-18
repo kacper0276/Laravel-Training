@@ -13,6 +13,11 @@ class UserController extends Controller
         return view('user.list');
     }
 
+    public function testShow1(Request $request, int $id)
+    {
+        return view('user.show', ['id' => $id, 'example' => 'example']);
+    }
+
     // REQUEST
     public function testShow(Request $request, int $id)
     {
@@ -117,4 +122,7 @@ class UserController extends Controller
         // Set as default: Content-Type: application/json
         return response()->json(['id' => 10]);
     }
+
+    // MVC - Model View Controler
+    public function mvc() {}
 }
