@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\GameController;
+use App\Http\Controllers\BladeTestController;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\User\ProfileController;
@@ -101,3 +102,6 @@ Route::post('controller/users/test/{id}', [UserController::class, 'testStore'])
 
 // PDF
 Route::get('report/daily-footfall', [ReportController::class, 'generateDailyFootfallReport']);
+
+//! Blade
+Route::get('blade/users/{userId}', [BladeTestController::class, 'show']);
