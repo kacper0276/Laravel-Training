@@ -9,6 +9,15 @@
 
 @section('content')
     <h3>Informacje o użytkowniku</h3>
+
+    @auth
+        Informacja czy użytkownik jest zalogowany
+    @endauth
+
+    @guest
+        Użytkownik nie jest zalogowany
+    @endguest
+
     <ul>
         <li>ID: {{ $user['id'] }}</li>
         <li>Imię: {{ $user['firstName'] }}</li>
