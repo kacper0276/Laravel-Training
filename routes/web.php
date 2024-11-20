@@ -104,4 +104,7 @@ Route::post('controller/users/test/{id}', [UserController::class, 'testStore'])
 Route::get('report/daily-footfall', [ReportController::class, 'generateDailyFootfallReport']);
 
 //! Blade
-Route::get('blade/users/{userId}', [BladeTestController::class, 'show']);
+Route::get('blade/users/{userId}', [BladeTestController::class, 'show'])
+    ->name('blade.user.details');
+
+Route::get('blade/users/list', [BladeTestController::class, 'list']);
