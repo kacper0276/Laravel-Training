@@ -25,6 +25,19 @@
                 <div>Nastolatek</div>
             @endif
         </li>
+
+        @isset($nick)
+            ISSET - true
+        @else
+            ISSET - false
+        @endisset
+
+        @empty($nick)
+            Empty - true
+        @else
+            Empty - false
+        @endempty
+
     </ul>
 
     <div>
