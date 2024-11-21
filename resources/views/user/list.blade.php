@@ -78,7 +78,29 @@
                         </tr>
                     @endforelse
 
-
+                        <tr><td colspan="3">WHILE</td></tr>
+                    @php
+                        $j = 0;
+                        $count = count($users);
+                    @endphp
+                    @while ($j < $count)
+                        <tr>
+                            <td>{{ $users[$j]['id'] }}</td>
+                            <td>{{ $users[$j]['name'] }}</td>
+                            <td>
+                                <a href="{{
+                                    route('blade.user.details', [
+                                    'userId' => $users[$j]['id']
+                                    ])
+                                }}">
+                                    Szczegóły
+                                </a>
+                            </td>
+                        </tr>
+                        @php
+                            $j++;
+                        @endphp
+                    @endwhile
             </tbody>
         </taable>
     </html>
