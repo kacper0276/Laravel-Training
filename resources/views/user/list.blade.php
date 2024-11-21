@@ -48,19 +48,7 @@
             <tbody>
                     <tr><td colspan="3">FOREACH</td></tr>
                     @foreach ($users as $user)
-                        <tr>
-                            <td>{{ $user['id'] }}</td>
-                            <td>{{ $user['name'] }}</td>
-                            <td>
-                                <a href="{{
-                                    route('blade.user.details', [
-                                    'userId' => $user['id']
-                                    ])
-                                }}">
-                                    Szczegóły
-                                </a>
-                            </td>
-                        </tr>
+                        @include('user.listRow', ['userData' => $user])
                     @endforeach
 
                     <tr><td colspan="3">FOR</td></tr>
@@ -88,23 +76,12 @@
                         @endif
                         {{-- LUB --}}
                         {{-- @break($i == 1) - równoważny zapis --}}
+                        {{-- @include('user.listRow', ['userData' => $user[$i]]) --}}
                     @endfor
 
                     <tr><td colspan="3">FORELSE</td></tr>
                     @forelse ($users as $user)
-                        <tr>
-                            <td>{{ $user['id'] }}</td>
-                            <td>{{ $user['name'] }}</td>
-                            <td>
-                                <a href="{{
-                                    route('blade.user.details', [
-                                    'userId' => $user['id']
-                                    ])
-                                }}">
-                                    Szczegóły
-                                </a>
-                            </td>
-                        </tr>
+                        @include('user.listRow', ['userData' => $user])
                     @empty
                         <tr>
                             <td colspan="3">Lista jest pusta</tr>
