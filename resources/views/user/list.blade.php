@@ -57,6 +57,27 @@
                         {{-- @break($i == 1) - równoważny zapis --}}
                     @endfor
 
+                    <tr><td colspan="3">FORELSE</td></tr>
+                    @forelse ($users as $user)
+                        <tr>
+                            <td>{{ $user['id'] }}</td>
+                            <td>{{ $user['name'] }}</td>
+                            <td>
+                                <a href="{{
+                                    route('blade.user.details', [
+                                    'userId' => $user['id']
+                                    ])
+                                }}">
+                                    Szczegóły
+                                </a>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="3">Lista jest pusta</tr>
+                        </tr>
+                    @endforelse
+
 
             </tbody>
         </taable>
