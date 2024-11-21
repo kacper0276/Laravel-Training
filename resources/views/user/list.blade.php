@@ -4,6 +4,39 @@
     <html>
         <h1>Users list</h1>
 
+        <table>
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Iteration</th>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($users as $user)
+                    @if ($loop->first)
+                     <tr><td>FIRST</td></tr>
+                    @endif
+
+                    <tr>
+                        <td>{{ $loop->index }}</td>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $user['id'] }}</td>
+                        <td>{{ $user['name'] }}</td>
+                        <td>Link</td>
+                    </tr>
+
+                    @if ($loop->last)
+                        <tr><td>LAST</td></tr>
+                    @endif
+                @endforeach
+            </tbody>
+        </table>
+
+        <hr>
+        <hr>
         <taable>
             <thead>
                 <tr>
