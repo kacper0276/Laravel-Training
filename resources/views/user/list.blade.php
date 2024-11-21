@@ -46,6 +46,9 @@
                 </tr>
             </thead>
             <tbody>
+                    <tr><td colspan="3">EACH</td></tr>
+                    @each('user.listRow', $users, 'userData', 'user.emptyRow')
+
                     <tr><td colspan="3">FOREACH</td></tr>
                     @foreach ($users as $user)
                         @include('user.listRow', ['userData' => $user])
@@ -83,9 +86,7 @@
                     @forelse ($users as $user)
                         @include('user.listRow', ['userData' => $user])
                     @empty
-                        <tr>
-                            <td colspan="3">Lista jest pusta</tr>
-                        </tr>
+                        @include('user.emptyRow')
                     @endforelse
 
                         <tr><td colspan="3">WHILE</td></tr>
