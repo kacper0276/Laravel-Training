@@ -3,15 +3,18 @@
 use App\Http\Controllers\Api\GameController;
 use App\Http\Controllers\BladeTestController;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\Home\MainPage;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\ShowAddress;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [MainPage::class])
+    ->name('home.mainPage');
 
 Route::get('/hello/{name}', [HelloController::class, 'hello']);
 
