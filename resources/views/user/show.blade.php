@@ -4,57 +4,22 @@
 
 @section('sidebar')
     @parent
-    Sidebar z dziecka
+    <div>Lista użytkowników: <a href="{{ route('get.users') }}">Link</a></div>
 @endsection
 
 @section('content')
-    <h3>Informacje o użytkowniku</h3>
+    <div class="card">
+        <h5 class="card-header">{{ $user['name'] }}</h5>
+        <div class="card-body">
+            <ul>
+                <li>Id: {{ $user['id'] }}</li>
+                <li>Imię: {{ $user['firstName'] }}</li>
+                <li>Nazwisko: {{ $user['lastName'] }}</li>
+                <li>Miasto: {{ $user['city'] }}</li>
+                <li>Wiek: {{ $user['age'] }}</li>
+            </ul>
 
-    @auth
-        Informacja czy użytkownik jest zalogowany
-    @endauth
-
-    @guest
-        Użytkownik nie jest zalogowany
-    @endguest
-
-    <ul>
-        <li>ID: {{ $user['id'] }}</li>
-        <li>Imię: {{ $user['firstName'] }}</li>
-        <li>Nazwisko: {{ $user['lastName'] }}</li>
-        <li>Miasto: {{ $user['city'] }}</li>
-
-        <li>
-            Wiek: {{ $user['age'] }}
-            @if ($user['age'] >= 18)
-                <div>Osoba dorosła</div>
-            @elseif ($user['age'] >= 16)
-                <div>Prawie dorosła</div>
-            @else
-                <div>Nastolatek</div>
-            @endif
-        </li>
-
-        @isset($nick)
-            ISSET - true
-        @else
-            ISSET - false
-        @endisset
-
-        @empty($nick)
-            Empty - true
-        @else
-            Empty - false
-        @endempty
-
-    </ul>
-
-    <div>
-        {{ $user['html'] }}
-        <br>
-        <?php echo $user['html'] ?>
-        <br>
-        {!! $user['html'] !!} {{-- Render html tags not as string --}}
+            <a href="{{ route('get.users') }}" class="btn btn-light">Lista użytkowników</a>
+        </div>
     </div>
-
 @endsection
