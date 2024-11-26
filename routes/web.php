@@ -10,9 +10,6 @@ use App\Http\Controllers\User\ShowAddress;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 Route::get('/', [MainPage::class])
     ->name('home.mainPage');
 
