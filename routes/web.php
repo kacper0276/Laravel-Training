@@ -100,7 +100,7 @@ Route::get('controller/users/test/{id}', [UserController::class, 'testShow'])
 Route::post('controller/users/test/{id}', [UserController::class, 'testStore'])
     ->name('controller.post.users.test');
 
-// PDF
+//! PDF
 Route::get('report/daily-footfall', [ReportController::class, 'generateDailyFootfallReport']);
 
 //! Blade
